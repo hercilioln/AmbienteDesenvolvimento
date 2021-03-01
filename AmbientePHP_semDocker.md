@@ -10,9 +10,12 @@ Há duas maneiras de instalar o WSL2 e nesse [**site**](https://docs.microsoft.c
 ---
 Primeiramente gosto de preparar meu banco de dados e por isso instalo logo o PostgreSQL. Há um detalhe importante: o PostgreSQL depois de instalado não se conecta ao banco porque aparece um erro de servidor, nunca entendi o porquê, porém a soluçao é instalar ele como WSL1 e depois reverter para o WSL2 que vai funcionar perfeitamente. 
 ### 2.1 - Reverter WSL2 para WSL1
-Primeiramente verifique qual versão sua distro está instalada, no PowerShell vai esse comando.   
-> ```wsl --list --verbose```  
+Primeiramente verifique qual versão sua distro está instalada, no PowerShell vai esse comando.  
 
-Aparecerá uma linha com a a distro e a versão do WSL e se caso estiver no WSL2 será necessário reverter a versão para que o Postrgers funcione   
-> ```wsl --set-version <nome da distro> <versão do WSL>```
+
+```wsl --list --verbose```  
+
+Aparecerá uma linha com a a distro e a versão do WSL e se caso estiver no WSL2 será necessário reverter a versão para que o Postrgers funcione 
+
+```wsl --set-version <nome da distro> <versão do WSL>```
 
