@@ -18,7 +18,7 @@ sudo apt install zsh
 ```
 git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 ```
-Clonado o reposiório, agora será preciso criar o arquivo ``.zshrc`` que é um arquivo onde estará todas as configurações do terminal, nesse atquivo você pode mudar o tema, adicionar alias e outros. No meu caso eu só uso para adicionar os meus Alias, que são atalhos para que eu nao precise digitar comandos enormes que utilizo sempre. Logo mais vou ensinar como fazer os alias. 
+Clonado o repositório, agora será preciso criar o arquivo ``.zshrc`` que é um arquivo onde estará todas as configurações do zsh, nesse arquivo você pode mudar o tema, adicionar alias e outros. No meu caso eu só uso para adicionar os meus Alias, que são atalhos para que eu nao precise digitar comandos enormes que utilizo sempre. Logo mais vou ensinar como fazer os alias. 
 
 Bom, agora crie o arquivo com esse comando:
 
@@ -35,7 +35,9 @@ Feito isso, será preciso reiniciar seu Linux, se tiver usando WSL é só fechar
 
 Se você quiser mudar o tema do seu zsh, [aqui vai um link](https://github.com/ohmyzsh/ohmyzsh/wiki/themes) com vários temas. No meu caso eu sempre utilizo o que ja vem de padrão pra mim é o suficiente.
 
-Agora vamos adicionar os Alias, para facilitar nosso trabalho ao utilizar o terminal. Localize o arquivo ``.zshrc`` , geralmente ele está na pasta raiz do seu sistema, depois de localizá-lo abra ele com seu editor. Bem no final você verá algo assim:
+Agora vamos adicionar os Alias:
+
+Para facilitar nosso trabalho ao utilizar o terminal. Localize o arquivo ``.zshrc`` , geralmente ele está na pasta raiz do seu sistema, depois de localizá-lo abra ele com seu editor. Bem no final você verá algo assim:
 ````
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -63,6 +65,9 @@ alias update="sudo apt update"
 alias gtadd="git add ."
 alias gtm="git commit -m"
 alias gtpm="git push origin master"
-alias gtpm="git push origin master"
 alias gtp="git push"
 ```
+
+>**Lembre-se:** Depois de adicionar todos os alias, salve o arquivo e reinicie o terminal, depois é só usar de a vontade.
+
+O Zsh tem vários plugins e temas, então existe uma possibilidade enorme de personalização, basta fazer uma pesquisa rápida que você vai encontrar, eu particularmente já deixo assim do jeito que vem mesmo.

@@ -1,4 +1,4 @@
-# Instruções com as principais configurações do meu ambiente de desenvolvimento
+# **Instruções com as principais configurações do meu ambiente de desenvolvimento**
 
 - Instalação do WSL2 (Windows Subsystem Linux)
 
@@ -6,6 +6,5 @@
 
 - Configurações do Dockerfile e docker-compose.yml
 
-- Instalação ZSH + Oh My Zsh e configuração dos Alias
+- [Instalação ZSH + Oh My Zsh e configuração dos Alias](/InstalacaoZSH.md)
 
-- Json com as configurações padrões do meu terminal
