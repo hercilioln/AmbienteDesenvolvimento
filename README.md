@@ -2,7 +2,7 @@
 
 - Instalação do WSL2 (Windows Subsystem Linux)
 
-- [Instalação do Ambiente Laravel PHP + PostgreSQL + PGAdmin](https://github.com/hercilioln/AmbienteDesenvolvimento/blob/master/AmbienteLaravel.md)
+- [Instalação do Ambiente Laravel PHP + PostgreSQL + PGAdmin](/AmbienteLaravel.md)
 
 - Configurações do Dockerfile e docker-compose.yml
 
