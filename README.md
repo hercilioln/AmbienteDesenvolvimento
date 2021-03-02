@@ -6,8 +6,6 @@
 
 - Configurações do Dockerfile e docker-compose.yml
 
-- Instalação ZSH + Oh My Zsh
+- Instalação ZSH + Oh My Zsh e configuração dos Alias
 
 - Json com as configurações padrões do meu terminal
-
-- Alias para o ZSH
