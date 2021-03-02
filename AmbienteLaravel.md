@@ -79,16 +79,16 @@ Digite a senha e depois reinicie o seu terminal.
 
 ## **3 - Instalando e Configurando o PgAdmin**
 
-Baixar e instalar o PgAdmin no Windows. [Aqui](https://www.pgadmin.org/download/pgadmin-4-windows/)
+Baixe e instale o PgAdmin no Windows, baixe a última versão atualizada. [Aqui](https://www.pgadmin.org/download/pgadmin-4-windows/)
 
 Abra a sua distro e verifique se o posgtres está ativado.
 
-#### Verificar status
+#### Verificar status:
 ```
 sudo service postgresql status
 ```
 
-#### Ativar
+#### Ativar:
 ```
 sudo service postgresql start
 ```
@@ -99,7 +99,7 @@ Abra o PgAdmin e provavelmente irá pedir uma senha, nesse caso coloque a mesma 
 
 Abrirá um janela e na aba **General** escolha um nome para o seu server, eu geralmente coloco **localhost**.
 
-Na aba **Connection**
+Na aba **Connection**:
 
 Host name/address coloque: ```127.0.0.1```
 
