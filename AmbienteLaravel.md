@@ -1,5 +1,5 @@
 
-# **Instalação Ambiente Laravel PHP + PostgreSQL + PgAdmin**
+# **Instalação do PHP, PostgreSQL, pgAdmin, Composer e Laravel**
 
 Tutorial de instalacão do meu ambiente de desenvolvimento WEB com PHP e PostgreSQL, geralmente uso essas instruções para preparar meu ambiente de desenvolvimento no Windows utilizando o WSL2 (Windows Subsystem Linux 2).
 
@@ -8,23 +8,36 @@ Tutorial de instalacão do meu ambiente de desenvolvimento WEB com PHP e Postgre
 Há um tutorial exclusivo que eu fiz para isso [**aqui**]().
 ## **2 - Instalando e Configurando o PostrgeSQL**
 
-Primeiramente gosto de preparar meu banco de dados e por isso instalo logo o PostgreSQL. Há um detalhe importante: o PostgreSQL depois de instalado não se conecta ao banco porque aparece um erro de servidor, nunca entendi o porquê, porém a soluçao é instalar ele como WSL1 e depois reverter para o WSL2 que vai funcionar perfeitamente. 
+Primeiramente gosto de preparar meu banco de dados e por isso instalo logo o PostgreSQL. Há um detalhe importante: o PostgreSQL depois de instalado não se conecta ao banco porque aparece um erro de servidor, nunca entendi o porquê, porém a solução é instalar ele como WSL1 e depois reverter para o WSL2 que vai funcionar perfeitamente. 
 
 
 ---
 ### **2.1 - Reverter WSL2 para WSL1**
-Primeiramente verifique qual versão sua distro está instalada, no PowerShell vai esse comando.  
+Primeiramente verifique qual versão sua distro está instalada, no PowerShell vai esse comando:  
 
 ```
 wsl --list --verbose
 ```  
 
-Aparecerá uma linha com a a distro e a versão do WSL e se caso estiver no WSL2 será necessário reverter a versão para que o Postrgers funcione 
+Você verá algo assim:
+
+```
+  NAME            STATE           VERSION
+* Ubuntu-20.04    Running         2
+```
+
+Se tiver VERSION 2 inverta para o 1, ao final da instalação do PostgreSQL você fará o mesmo processo, só que inverso.
 
 ```
 wsl --set-version <nome da distro> <versão do WSL>
 ```
 
+No meu caso ficou assim:
+
+```
+wsl --set-version Ubuntu-20.04 1
+```
+Dependendo da sua máquina esse processo pode demorar um pouco, só aguarde e prossiga com a instalação.
 
 ---
 ### **2.2 - Instalação do PostgreSQL**
@@ -38,17 +51,17 @@ sudo apt install postgresql postgresql-contrib libpq-dev
 
 > **Importante:** Por alguma razão sempre que for abrir a sua distro no WSL o postgres vem desativado, pra isso é preciso sempre ativá-lo, os comandos abaixo serão muito comuns, recomendo criar um alias pra cada um desses. [Aqui tem uma lista com todos os meus alias e como configurá-los.]()
 
-#### Verifica o status
+#### Verifica o status:
 ```
 sudo service postgresql status
 ```
 
-#### Ativar
+#### Ativar:
 ```
 sudo service postgresql start
 ```
 
-#### Desativar
+#### Desativar:
 ```
 sudo service postgresql stop
 ```
@@ -66,7 +79,7 @@ Digite a senha e depois reinicie o seu terminal.
 
 ## **3 - Instalando e Configurando o PgAdmin**
 
-Primeiramente baixar e instalar o PgAdmin no Windows. [Aqui](https://www.pgadmin.org/download/pgadmin-4-windows/)
+Baixar e instalar o PgAdmin no Windows. [Aqui](https://www.pgadmin.org/download/pgadmin-4-windows/)
 
 Abra a sua distro e verifique se o posgtres está ativado.
 
@@ -80,7 +93,7 @@ sudo service postgresql status
 sudo service postgresql start
 ```
 
-Abra o PgAdmin e com o botão direito do mouse vá em: 
+Abra o PgAdmin e provavelmente irá pedir uma senha, nesse caso coloque a mesma configurada anteriormente para o Postgres, agora com o botão direito do mouse vá em: 
 
 **Servers -> Create -> Server**
 
@@ -88,7 +101,7 @@ Abrirá um janela e na aba **General** escolha um nome para o seu server, eu ger
 
 Na aba **Connection**
 
-Host name/address coloque: ```127.0.0.1``` ou ```localhost```
+Host name/address coloque: ```127.0.0.1```
 
 Maintenance database: ````postgres````
 
@@ -96,7 +109,7 @@ Username: ````postgres````
 
 Password: ````postgres````
 
-> **Impotante:** Essas configurações acima são as padrões e profiro deixar assim por pura comodidade mesmo, porém se você quiser pode mudar o Username e Password, [aqui tem um tutorial de como fazer isso](https://harshityadav95.medium.com/postgresql-in-windows-subsystem-for-linux-wsl-6dc751ac1ff3). 
+> **Impotante:** Essas configurações acima são as padrões e prefiro deixar assim por pura comodidade mesmo, porém se você quiser pode mudar o Username e Password, [aqui tem um tutorial de como fazer isso](https://harshityadav95.medium.com/postgresql-in-windows-subsystem-for-linux-wsl-6dc751ac1ff3). 
 
 Depois clique em save e seu server estará conectado e funcionando.
 
@@ -116,7 +129,7 @@ Primeiramente antes de instalar o Laravel, precisamos instalar o PHP e o Compose
 
 ### **4.1 - Instalação do PHP**
 
-Primeiro atualize as dependências:
+Primeiro atualize as dependências e depois instale o PHP:
 ```
 sudo apt update
 
@@ -132,7 +145,7 @@ sudo apt update
 
 sudo apt install curl php-cli php-mbstring git unzip
 ```
-**1 - Baixando e Instalando o Composer**
+**2 - Baixando e Instalando o Composer**
 
 ````
 cd ~
@@ -151,7 +164,7 @@ Se você quiser verificar o valor obtido, execute:
 echo $HASH
 ```
 
-Agora execute o código PHP para verificar se o escript de instação está pronto para ser executado:
+Agora execute o código PHP para verificar se o script de instalação está pronto para ser executado:
 
 ```
 php -r "if (hash_file('SHA384', 'composer-setup.php') === '$HASH') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
@@ -225,7 +238,7 @@ composer create-project --prefer-dist laravel/laravel "Seu-Projeto"
 ```
 > **Observação: coloque o nome do seu projeto sem as aspas!**
 
-Configurando o seu arquivo ``.env`` e conexão com o banco de dados
+Configurando o seu arquivo ``.env`` e conexão com o banco de dados:
 
 Abra seu editor ou IDE para configurá-lo. De acordo com as configurações feitas no pgAdmin agora vamos passar aquelas configurações para o ``.env`` e essa parte deve se parecer com isso aqui:
 ```
@@ -251,7 +264,7 @@ php artisan migrate
 Por padrão o Laravel já vem com um servidor interno, então não precisamos utilizar o apache ou nginx por exemplo, basta apenas executar o seguinte comando:
 
 ```
-php artisan serv
+php artisan serve
 ```
 
 Será exibido algo assim:
@@ -260,8 +273,10 @@ Será exibido algo assim:
 Starting Laravel development server: http://127.0.0.1:8000
 [Tue Mar  2 00:43:56 2021] PHP 7.4.3 Development Server (http://127.0.0.1:8000) started
 ```
-No seu navegador é só colar o endereço: ``http://127.0.0.1:8000``
+No seu navegador é só colar o endereço do server que será algo assim: ``http://127.0.0.1:8000``
 
 ---
 
-Tudo certo, agora é só praticar. Meu objetivo com isso é mostrar meu ambiente de desenvolvimento que sempre utilizo no meu dia-a-dia e possivelmente ajudando alguém que esteja procurando por algum tutorial fácil, se tiver algum erro ou sugestões manda uma DM no meu [**Twitter**](https://twitter.com/hercilioln)
+Tudo certo, agora é só praticar. Meu objetivo com isso é mostrar meu ambiente de desenvolvimento que sempre utilizo no meu dia-a-dia e possivelmente ajudar alguém que esteja procurando por algum tutorial fácil. 
+
+Se tiver algum erro ou sugestões manda uma DM no meu [**Twitter**](https://twitter.com/hercilioln)
