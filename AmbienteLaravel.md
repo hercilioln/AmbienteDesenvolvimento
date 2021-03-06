@@ -67,7 +67,16 @@ sudo service postgresql stop
 ```
 
 ---
-### **2.3 - Configurando a sua própria senha para o Postgres**
+### **2.3 - Configurando a sua própria senha e usuario para o Postgres**
+
+Abra o terminal e digite o seguinte comando:
+
+```
+sudo -u postgres createuser "username"
+```
+>Obs: coloque o nome de usuário sem as aspas
+
+Essa senha é para entrar no server do postgres
 
 ```
 sudo passwd postgres
@@ -75,7 +84,20 @@ sudo passwd postgres
 
 Digite a senha e depois reinicie o seu terminal.
 
----
+Depois de reiniciado, agora digite o seguinte comando:
+
+```
+ sudo -u postgres psql
+```
+
+esse comando vai abrir o shell do postgres, nele voce vai alterar a Role para uma senha nova
+
+```
+ALTER USER "username" PASSWORD 'password';
+```
+>Importante: Em username é pra colocar sem aspas. Em password é necessário deixar as aspas simples!
+
+--- 
 
 ## **3 - Instalando e Configurando o PgAdmin**
 
