@@ -1,10 +1,6 @@
-# **Instruções com as principais configurações do meu ambiente de desenvolvimento**
+# **Instruções com as principais configurações do meu ambiente de desenvolvimento - Versão 2.0**
 
-- Instalação do WSL2 (Windows Subsystem Linux)
-
-- [Instalação do Ambiente Laravel PHP + PostgreSQL + PGAdmin](/AmbienteLaravel.md)
-
-- Configurações do Dockerfile e docker-compose.yml
+- [Instalação do Ambiente: WSL2 + Laravel + PostgreSQL + PGAdmin](/AmbienteLaravel.md)
 
 - [Instalação ZSH + Oh My Zsh e configuração dos Alias](/InstalacaoZSH.md)
 
