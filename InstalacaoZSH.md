@@ -35,7 +35,9 @@ Feito isso, será preciso reiniciar seu Linux, se tiver usando WSL é só fechar
 
 Se você quiser mudar o tema do seu zsh, [aqui vai um link](https://github.com/ohmyzsh/ohmyzsh/wiki/themes) com vários temas. No meu caso eu sempre utilizo o que ja vem de padrão pra mim é o suficiente.
 
-Agora vamos adicionar os Alias:
+---
+## **Utilizando Alias**
+
 
 Para facilitar nosso trabalho ao utilizar o terminal. Localize o arquivo ``.zshrc`` , geralmente ele está na pasta raiz do seu sistema, depois de localizá-lo abra ele com seu editor. Bem no final você verá algo assim:
 ````

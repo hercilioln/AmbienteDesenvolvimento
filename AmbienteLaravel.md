@@ -3,44 +3,21 @@
 
 Tutorial de instalacão do meu ambiente de desenvolvimento WEB com PHP e PostgreSQL, geralmente uso essas instruções para preparar meu ambiente de desenvolvimento no Windows utilizando o WSL2 (Windows Subsystem Linux 2).
 
-## **1 - Instalação WSL2 no Windows 10**
+## **1 - Instalação WSL2 no Windows 10 ou 11**
 
-Há um tutorial exclusivo que eu fiz para isso [**aqui**]().
+Agora você pode instalar tudo o que precisa para executar o WSL (Subsistema do Windows para Linux) inserindo este comando no PowerShell administrador ou no Prompt de Comando do Windows e reiniciando o computador quando finalizar a instalação.
+
+```
+wsl --install
+```  
+Ao digitar esse comando, ele ja instala automaticamente o Ubuntu, caso queria instalar outra distro linux no WSL2, verifique as instruções [nesse link.](https://docs.microsoft.com/pt-br/windows/wsl/install)
+
 ## **2 - Instalando e Configurando o PostrgeSQL**
 
-Primeiramente gosto de preparar meu banco de dados e por isso instalo logo o PostgreSQL. Há um detalhe importante: o PostgreSQL depois de instalado não se conecta ao banco porque aparece um erro de servidor, nunca entendi o porquê, porém a solução é instalar ele como WSL1 e depois reverter para o WSL2 que vai funcionar perfeitamente. 
-
-
----
-### **2.1 - Reverter WSL2 para WSL1**
-Primeiramente verifique qual versão sua distro está instalada, no PowerShell vai esse comando:  
-
-```
-wsl --list --verbose
-```  
-
-Você verá algo assim:
-
-```
-  NAME            STATE           VERSION
-* Ubuntu-20.04    Running         2
-```
-
-Se tiver VERSION 2 inverta para o 1, ao final da instalação do PostgreSQL você fará o mesmo processo, só que inverso.
-
-```
-wsl --set-version <nome da distro> <versão do WSL>
-```
-
-No meu caso ficou assim:
-
-```
-wsl --set-version Ubuntu-20.04 1
-```
-Dependendo da sua máquina esse processo pode demorar um pouco, só aguarde e prossiga com a instalação.
+Primeiramente gosto de preparar meu banco de dados e por isso instalo logo o PostgreSQL. 
 
 ---
-### **2.2 - Instalação do PostgreSQL**
+### **2.1 - Instalação do PostgreSQL**
 
 ```
 sudo apt update
@@ -49,7 +26,7 @@ sudo apt install postgresql postgresql-contrib libpq-dev
 ```
 
 
-> **Importante:** Por alguma razão sempre que for abrir a sua distro no WSL o postgres vem desativado, pra isso é preciso sempre ativá-lo, os comandos abaixo serão muito comuns, recomendo criar um alias pra cada um desses. [Aqui tem uma lista com todos os meus alias e como configurá-los.]()
+> **Importante:** Por alguma razão sempre que for abrir a sua distro no WSL o postgres vem desativado, pra isso é preciso sempre ativá-lo, os comandos abaixo serão muito comuns, recomendo criar um alias pra cada um desses. Nesse outro [tutorial](/InstalacaoZSH.md) eu ensino como fazer isso.
 
 #### Verifica o status:
 ```
