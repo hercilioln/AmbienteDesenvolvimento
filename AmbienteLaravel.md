@@ -196,7 +196,7 @@ Use it: php /usr/local/bin/composer
 Para verificar a instalação execute:
 
 ```
-composers
+composerss
 ```
 Você verá algo mais ou menos assim:
 
