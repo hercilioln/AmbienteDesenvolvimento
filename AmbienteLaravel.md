@@ -207,7 +207,7 @@ Você verá algo mais ou menos assim:
 / /___/ /_/ / / / / / / /_/ / /_/ (__  )  __/ /
 \____/\____/_/ /_/ /_/ .___/\____/____/\___/_/
                     /_/
-Composer version 2.0.8 2020-12-03 17:20:38
+Composer version
 
 Usage:
   command [options] [arguments]
