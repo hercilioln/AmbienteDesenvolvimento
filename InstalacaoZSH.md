@@ -72,4 +72,10 @@ alias gtp="git push"
 
 >**Lembre-se:** Depois de adicionar todos os alias, salve o arquivo e reinicie o terminal, depois é só usar de a vontade.
 
+## Autosugest
+Plugin para autocompletar comandos
+```
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+echo 'source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh' >> ~/.zshrc
+```
 O Zsh tem vários plugins e temas, então existe uma possibilidade enorme de personalização, basta fazer uma pesquisa rápida que você vai encontrar, eu particularmente já deixo assim do jeito que vem mesmo.
